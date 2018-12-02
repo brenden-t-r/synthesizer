@@ -79,6 +79,18 @@ window.onload = function () {
 		oscillators[char].stop(context.currentTime);
 		delete oscillators[char];
 	});
+	
+	$("#noiseButton").click(function () {
+		var osc = context.createOscillator();
+		osc.type = 'sine';
+		osc.connect(masterVolume);
+		masterVolume.connect(context.destination);
+
+		osc.frequency.value = 140; 
+		
+		osc.start(context.currentTime);
+		osc.stop(context.currentTime + 1);
+	});
 
 
 
