@@ -86,7 +86,7 @@ window.onload = function () {
 		osc.connect(masterVolume);
 		masterVolume.connect(context.destination);
 
-		osc.frequency.value = 140; 
+		osc.frequency.value = 140.0; 
 		
 		osc.start(context.currentTime);
 		osc.stop(context.currentTime + 1);
